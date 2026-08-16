@@ -7,6 +7,7 @@ g1/whole_body_tracking/dance_102:
   observations: ["whole_body_tracking/motion_command", "whole_body_tracking/motion_anchor_ori_b", "ang_vel", "dof_pos", "dof_vel", "actions"]
   observations_history: []  # 0 is the latest observation
   observations_history_priority: "time"  # "time" or "term" priority
+  default_commands: [0.0, 0.0, 0.0]
   clip_obs: 100.0
   clip_actions_lower: [-100.0, -100.0, -100.0, -100.0, -100.0, -100.0, -100.0, -100.0, -100.0, -100.0, -100.0, -100.0, -100.0, -100.0, -100.0, -100.0, -100.0, -100.0, -100.0, -100.0, -100.0, -100.0, -100.0, -100.0, -100.0, -100.0, -100.0, -100.0, -100.0]
   clip_actions_upper: [100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0]

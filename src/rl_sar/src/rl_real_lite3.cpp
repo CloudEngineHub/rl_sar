@@ -195,11 +195,15 @@ void RL_Real::RunModel()
     {
         this->episode_length_buf += 1;
         this->obs.ang_vel = this->robot_state.imu.gyroscope;
-        this->obs.commands = {this->control.x, this->control.y, this->control.yaw};
+        this->obs.commands[0] = this->control.x;
+        this->obs.commands[1] = this->control.y;
+        this->obs.commands[2] = this->control.yaw;
 #if !defined(USE_CMAKE) && defined(USE_ROS)
         if (this->control.navigation_mode)
         {
-            this->obs.commands = {(float)this->cmd_vel.linear.x, (float)this->cmd_vel.linear.y, (float)this->cmd_vel.angular.z};
+            this->obs.commands[0] = (float)this->cmd_vel.linear.x;
+            this->obs.commands[1] = (float)this->cmd_vel.linear.y;
+            this->obs.commands[2] = (float)this->cmd_vel.angular.z;
 
         }
 #endif
